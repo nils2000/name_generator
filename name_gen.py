@@ -14,7 +14,6 @@ def get_name(group_name):
         first = False
     return ret
 
-
 group["Elfen_Kind"] = ["Elfen_Kindernamen", "Elfen_Familiennamen"]
 group["Elfen_Mann"] = ["Elfen_Männernamen", "Elfen_Familiennamen"]
 group["Elfen_Frau"] = ["Elfen_Frauennamen", "Elfen_Familiennamen"]
@@ -47,8 +46,9 @@ group["Halbling_Frau"] = ["Halblinge_Frauennamen", "Halblinge_Familiennamen"]
 
 def halblings_name(female=True):
     """
-    Ein Halbling besitzt einen Vornamen, einen Familiennamen und möglicherweise einen Spitznamen. Bei Familiennamen handelt
-es sich oft um Spitznamen, die so treffend waren, dass sie über Generationen hinweg weitergegeben wurden.
+    Ein Halbling besitzt einen Vornamen, einen Familiennamen und möglicherweise einen
+    Spitznamen. Bei Familiennamen handelt es sich oft um Spitznamen, die so treffend
+    waren, dass sie über Generationen hinweg weitergegeben wurden.
     """
     if female:
         return get_name("Halbling_Frau")
@@ -143,8 +143,8 @@ gewöhnlich besitzen sie dunkle Haut, dunkle Augen und dickes schwarzes Haar."""
     return get_name("Rashemischer_Mann")
 
 
-group["Shou_Mann"] = ["Shou_Familiennamen","Shou_Männernamen"]
-group["Shou_Frau"] = ["Shou_Familiennamen","Shou_Frauennamen"]
+group["Shou_Mann"] = ["Shou_Familiennamen", "Shou_Männernamen"]
+group["Shou_Frau"] = ["Shou_Familiennamen", "Shou_Frauennamen"]
 
 
 def mensch__name(female=True):
@@ -193,20 +193,24 @@ def mensch_barovianer_name(female=True):
 group["Zwergen_Mann"] = ["Zwergen_Männernamen", "Zwergen_Familiennamen"]
 group["Zwergen_Frau"] = ["Zwergen_Frauennamen", "Zwergen_Familiennamen"]
 
+
 def zwergen_name(female=True):
     """Der Name eines Zwerges wird ihm nach strenger Tradition von einem der Klanältesten
     verliehen. Jeder anständige Zwergenname wurde schon seit Generationen wieder und wieder
     verwendet. Ein Zwergenname gehört dem Klan, nicht dem Einzelnen.
     Missbraucht ein Zwerg seinen Namen oder bringt Schande über ihn, wird er ihm entrissen
-    und es ihm per Gesetz verboten, einen anderen Zwergennamen an dessen Stelle anzunehmen."""
+    und es ihm per Gesetz verboten, einen anderen Zwergennamen an dessen Stelle anzunehmen.
+    """
     if female:
         return get_name("Zwergen_Frau")
     return get_name("Zwergen_Mann")
 
+
 group["Drachenblütiger_Mann"] = ["Drachenblütige_Klannamen", "Drachenblütige_Männernamen"]
 group["Drachenblütige_Frau"] = ["Drachenblütige_Klannamen", "Drachenblütige_Frauennamen"]
 
-def drachenblütiger_name(female=True):
+
+def drachengeborener_name(female=True):
     """Drachenblütige haben einen persönlichen Namen, der ihnen bei der Geburt gegeben wird,
     doch nennen sie als Zeichen der Ehre ihren Klannamen zuerst. Der Jugendname oder Spitzname
     wird unter guten Freunden als Ausdruck der Zuneigung verwendet und könnte an ein Ereignis
@@ -220,11 +224,14 @@ def drachenblütiger_name(female=True):
         return get_name("_Frau")
     return get_name("_Mann")
 
-def drachenblütiger_jugend_name():
+
+def drachengeborener_jugend_name():
     return random.choice(names["Drachenblütiger_Jugendnamen"])
+
 
 group["Gnomen_Mann"] = ["Gnomen_Männernamen", "Gnomen_Familiennamen"]
 group["Gnomen_Frau"] = ["Gnomen_Frauennamen", "Gnomen_Familiennamen"]
+
 
 def gnomen_name(female=True):
     """Gnome lieben Namen, und die meisten besitzen davon etwa ein halbes Dutzend. Die Mutter,
@@ -243,11 +250,14 @@ def gnomen_name(female=True):
         return get_name("Gnomen_Frau")
     return get_name("Gnomen_Mann")
 
+
 def gnomen_spitznamen():
     return random.choice(names["Gnomen_Spitznamen"])
 
+
 group["Ork_Mann"] = ["Ork_Männernamen"]
 group["Ork_Frau"] = ["Ork_Frauennamen"]
+
 
 def halbork_name(female=True):
     """Halborks tragen für gewöhnlich einen Namen, der an die Kultur angepasst ist, in der sie
@@ -259,8 +269,10 @@ def halbork_name(female=True):
         return get_name("Ork_Frau")
     return get_name("Ork_Mann")
 
+
 group["Tiefling_Mann"] = ["Tiefling_Männernamen"]
 group["Tiefling_Frau"] = ["Tiefling_Frauennamen"]
+
 
 def tiefling_name(female=True):
     """Meist tragen Tieflinge Namen, die dem Kulturkreis des Volkes angepasst sind, bei dem
@@ -274,9 +286,19 @@ def tiefling_name(female=True):
         return get_name("Tiefling_Frau")
     return get_name("Tiefling_Mann")
 
+
 def tiefling_tugendname():
     return random.choice(names["Tiefling_Tugendnamen"])
 
+
+group["Vistani_Mann"] = ["Vistani_Männernamen"]
+group["Vistani_Frau"] = ["Vistani_Frauennamen"]
+
+def vistani_name(female=True):
+    """"""
+    if female:
+        return get_name("Vistani_Frau")
+    return get_name("Vistani_Mann")
 
 # group["_Mann"] = ["_Männernamen", "_Familiennamen"]
 # group["_Frau"] = ["_Frauennamen", "_Familiennamen"]
@@ -287,31 +309,22 @@ def tiefling_tugendname():
 #         return get_name("_Frau")
 #     return get_name("_Mann")
 
-names["Elfen_Kindernamen"] = ["Ara", "Bryn", "Del", "Eryn", "Faen", "Innil", "Lael", "Mella", "Naill", "Naeris",
-                              "Phann", "Rael", "Rinn", "Sai", "Syllin", "Thia", "Vall"]
+names["Elfen_Kindernamen"] = ["Ael", "Ang", "Ara", "Ari", "Arn", "Aym", "Broe", "Bryn", "Cael", "Cy", "Dae", "Del",
+                              "Eli", "Eryn", "Faen", "Fera", "Gael", "Gar", "Innil", "jar", "Kan", "Koeth", "Lael",
+                              "Lue", "Mai", "Mara", "Mella", "Mya", "Naeris", "Naill", "Nim", "Phann", "Py", "Rael",
+                              "Raer", "Ren", "Rinn", "Rua", "Sael", "Sai", "Sumi", "Syllin", "Ta", "Thia", "Tia",
+                              "Traki", "Vall", "Von", "Wil", "Za"]
 names["Elfen_Familiennamen"] = ["Amakiir (Juwelblume)", "Amastacia (Sternblume)", "Galanodei (Mondflüstern)",
                                 "Holimion (Diamanttau)", "Ilphelkiir (Juwelblüte)", "Liadon(Silberwedel)",
                                 "Meliamne (Eichenfuß)", "Na'ilo (Nachthauch)", "Siannodel (Mondbach)",
-                                "Xiloscient (Goldblatt)"]
-names["Elfen_Männernamen"] = ["Adran", "Aelar", "Aramil",
-                              "Arannis", "Aust", "Beiro", "Berrian", "Carric", "Enialis", "Erdan", "Erevan",
-                              "Galinndan", "Hadarai", "Heian", "Himo", "Immeral", "Ivellios", "Laucian",
-                              "Mindartis", "Paelias", "Peren", "Quarion", "Riardon", "Rolen", "Soveliss",
-                              "Thamior", "Tharivol", "Theren", "Varis"]
-names["Elfen_Frauennamen"] = ["Adrie", "Althaea", "Anastrianna",
-                              "Andraste", "Antinua", "Bethrynna", "Birel", "Caelynn", "Drusilia", "Enna",
-                              "Felosial", "Ielenia", "Jelenneth", "Keyleth", "Leshanna", "Lia", "Meriele",
-                              "Mialee", "Naivara", "Quelenna", "Quillathe", "Sariel", "Shanairra",
-                              "Shava", "Silaqui", "Theirastra", "Thia", "Vadania", "Valanthe", "Xanaphia"]
-names["Halblinge_Männernamen"] = ["Alton", "Ander", "Cade", "Coorin", "Eldon",
-                                  "Errich", "Finan", "Garret", "Lindal", "Lyle", "Merric", "Milo", "Osborn",
-                                  "Perrin", "Reed", "Roscoe", "Wellby"]
-names["Halblinge_Frauennamen"] = ["Andry", "Bree", "Callie", "Cora", "Euphemia",
-                                  "Jillian", "Kithri", "Lavinia", "Lidda. Merla", "Nedda", "Paela", "Portia",
-                                  "Seraphina", "Shaena", "Trym", "Vani", "Verna"]
-names["Halblinge_Familiennamen"] = ["Buschsammler", "Dickdorn", "Fallkraut", "Grünflasche",
-                                    "Goldbarren", "Hochhügel", "Hügelspitz", "Strammgurt",
-                                    "Teeblatt", "Unterast"]
+                                "Xiloscient (Goldblatt)",
+"Aloro","Amakiir","Amastacia","Ariessus","Arnuanna","Berevan","Caerdonel","Caphaxath","Casilltenirra","Cithreth","Dalanthan","Eathalena","Erenaeth","Ethanasath","Fasharash","Firahel","Floshem","Galanodel","Goltorah","Hanali","Holimion","Horineth","Iathrana","Ilphelkiir","Iranapha","Koehlanna","Lathalas","Liadon","Meliamne","Mellerelel","Mystralath","Na'flo","Netyoive","Ofandrus","Ostoroth","Othronus","Qualanthri","Raethran","Rothenei","Selevarun","Siannodel","Suithrasas","Sylvaranth","Teinithra","Tiltathana","Wasanthi","Withrethin","Xiloscient","Xistsrith","Yaeldrin"
+                                ]
+names["Elfen_Männernamen"] = ["Adran","Aelar","Aerdeth","Ahvain","Aramil","Arannis","Aust","Azaki","Beiro","Berrian","Caeldrim","Carric","Dayereth","Dreali","Efferil","Eiravel","Enialis","Erdan","Erevan","Fivin","Gaiinndan","Gennal","Hadarai","Halimath","Heian","Himo","Immeral","Ivel lios","Korfel","Lamlis","Laucian","Lucan","Mindartis","Naal","Nutae","Paelias","Peren","Quarion","Riardon","Rolen","Soveliss","Suhnae","Thamior","Tharivol","Theren","Theriatis","Thervan","Uthemar","Vanuath","Varis"]
+names["Elfen_Frauennamen"] = ["Adrie","Ahinar","Althaea","Anastrianna","Andraste","Antinua","Arara","Baelitae","Bethrynna","Birel","Caelynn","Chaedi","Claira","Dara","Drusilia","Elama","Enna","Faral","Felosial","Hatae","lelenia","llanis","Irann","jarsali","Jelenneth","Keyleth","Leshanna","Lia","Maiathah","Malquis","Meriele","Mialee","Myathethil","Naivara","Quelenna","Quillathe","Ridaro","Sariel","Shanairla","Shava","Silaqui","Sumnes","Theirastra","Thiala","Tiaathque","Traulam","Vadania","Valanthe","Valna","Xanaphia"]
+names["Halblinge_Männernamen"] = ["Alton","Ander","Bernie","Bobbin","Cade","Callus","Corrin","Dannad","Danniel","Eddie","Egart","Eldon","Errich","Fildo","Finnan","Franklin","Garret","Garth","Gilbert","Gob","Harol","Igor","Jasper","Keith","Kevin","Lazam","Lerry","Lindal","Lyle","Merric","Mican","Milo","Morrin","Nebin","Nevil","Osborn","Ostran","Oswalt","Perrin","Poppy","Reed","Roscoe","Sam","Shardon","Tye","Ulmo","Wellby","Wendel","Wenner","Wes"]
+names["Halblinge_Frauennamen"] = ["Name","Alain","Andry","Anne","Bella","Blossom","Bree","Callie","Chenna","Cora","Dee","Dell","Eida","Eran","Euphemia","Georgina","Gynnie","Harriet","Jasmine","Jillian","Jo","Kithri","Lavinia","Lidda","Maegan","Marigold","Merla","Myria","Nedda","Nikki","Nora","Olivia","Paela","Pearl","Pennie","Philomena","Portia","Robbie","Rose","Sarai","Seraphina","Shaena","Stacee","Tawna","Thea","Trym","Tyna","Vani","Verna","Wella","Willow"]
+names["Halblinge_Familiennamen"] = ["Apfelblüte","Aufhügel","Breitopf","Dickhas","Distelkopf","Dornmaß","Eiderbeere","Fegsammler","Flüstermaus","Fruchtglas","Goldfass","Goldfund","Graslaub","Großherz","Großmann","Grünblatt","Grünflasch","Guterd","Hellmond","Honigtopf","Hügelspitz","Kesselpfiff","Kleinfinger","Kleinfuß","Kupferkessel","Leispfiff","Riedmann","Rotwang","Sanfthand","Sauband","Schattenschnell","Schnellfuß","Schnellschritt","Silberaug","Sonnwies","Starkbein","Starkmann","Steinbrück","Talmann","Teeblatt","Tiefgrund","Unterfuß","Unterzweig","Warmwasser","Weisacker","Wildmantel","Wildherz","Wurfstein","Wiseacre","Zehnpfennig"]
 names["Calishitische_Männernamen"] = ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir"]
 names["Calishitische_Frauennamen"] = ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida"]
 names["Calishitische_Familiennamen"] = ["Basha", "Dumein", "Jassan", "Khalid", "Mostana", "Pashar", "Rein"]
@@ -330,9 +343,13 @@ names["Illuskanische_Männernamen"] = ["Ander", "Blath", "Bran", "Frath", "Geth"
 names["Illuskanische_Frauennamen"] = ["Amafrey,Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra"]
 names["Illuskanische_Familiennamen"] = ["Blankholz", "Helder", "Hornrabe", "Knappmann", "Sturmböe", "Flusswind"]
 names["Mulanische_Männernamen"] = ["Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De",
-                                   "Urhur"]
+                                   "Urhur",
+"Ahmose","Akhom","Amasis","Amenemhet","Arien","Banefre","Bek","Djedefre","Djoser","Hekaib","Henenu","Horemheb","Horwedja","Huya","ibebi","Idu","Imhotep","Ineni","Ipuki","Irsu","Kagemni","Kawab","Kenamon","Kewap","Khaemwaset","Khafra","Khusebek","Masaharta","Meketre","Menkhaf","Merenre","Metjen","Nebamun","Nebetka","Nehi","Nekure","Nessumontu","Pakhom","Pawah","Pawero","Ramose","Rudjek","Sabaf","Sebek-khu","Sebni","Senusret","Shabaka","Somintu","Thaneni","Thethi"
+                                   ]
 names["Mulanische_Frauennamen"] = ["Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara",
-                                   "Zolis"]
+                                   "Zolis"
+"A’at","Ahset","Amunet","Aneksi","Atet","Baketamon","Betrest","Bunefer","Dedyet","Hatshepsut","Hentie","Herit","Hetepheres","Intakaes","Ipwet","Itet","Joba","Kasmut","Kemanub","Khemut","Kiya","Maia","Menhet","Merit","Meritamen","Merneith","Merseger","Muyet","Nebet","Nebetah","Nedjemmut","Nefertiti","Neferu","Neithotep","Nit","Nofret","Nubemiunu","Peseshet","Pypuy","Qalhata","Rai","Redji","Sadeh","Sadek","Sitamun","Sitre","Takhat","Tarset","Taweret","Werenro"
+                                   ]
 names["Mulanische_Familiennamen"] = ["Ankhalab", "Anskuld", "Fezim", "Hahpet", "Nathandem", "Sepret", "Uuthrakt"]
 names["Rashemi_Männernamen"] = ["Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar",
                                 "Vladislak"]
@@ -370,62 +387,71 @@ names["Barovianische_Familiennamen"] = ["Alastroij", "Antonowitsch/Antonowa",
                                         "Radowitsch/Radowa", "Rilskij", "Stefanowitsch/Stefanowa", "Strasni",
                                         "Swilowitsch/Swilowa", "Taltos", "Targolow/Targolowa", "Tyminskij",
                                         "Ulbrek", "Ulrich", "Vadu", "Voltanescu", "Zalenskij", "Zalken"]
-names["Zwergen_Männernamen"] = ["Adrik", "Alberich", "Baeren", "Barendd", "Brottor",
-                                "Bruenor", "Dain", "Darrak", "Delg", "Eberk", "Einkil", "Fargrim", "Flint",
-                                "Gardain", "Harbek", "Kildrak", "Morgran", "Orsik", "Oskar", "Rangrim",
-                                "Rurik", "Taklinn", "Thoradin", "Thorin", "Tordek", "Traubon", "Travok",
-                                "Ulfgar", "Veit", "Vondal"]
-names["Zwergen_Frauennamen"] = ["Amber", "Artin", "Audhild", "Bardryn", "Dagnal",
-                                "Diesa", "Eldeth", "Falkrunn", "Finellen", "Gunndola", "Gurdis", "Helja",
-                                "Hlin", "Kathra", "Kristryd", "Ilde", "Liftrasa", "Mardred", "Riswynn",
-                                "Sannl", "Torbera", "Torgga", "Vistra"]
-names["Zwergen_Familiennamen"] = ["Balderk", "Heldenhammer", "Starkamboss", "Dankil",
-                                  "Feuerschmiede", "Frostbart", "Gorunn", "Holderhek", "Eisenfaust",
-                                  "Loderr", "Lutgehr", "Rumnaheim", "Strakeln", "Torunn", "Ungart"]
-names["Drachenblütige_Männernamen"] = ["Arjhan", "Balasar", "Bharash", "Donaar",
-                                       "Ghesh", "Heskan. Kriv", "Medrash", "Mehen", "Nadarr", "Pandjed",
-                                       "Patrin", "Rhogat", "Shamash", "Shedinn", "Tarhun", "Torinn"]
-names["Drachenblütige_Frauennamen"] = ["Akra", "Biri", "Daar", "Farideh", "Harann", "Jheri",
-                                       "Kava", "Korinn", "Mishann", "Nala", "Perra", "Raiann", "Sora", "Surina",
-                                       "Thava", "Uadjit"]
-names["Drachenblütige_Klannamen"] = ["Clethtinthiallor", "Daardendrian", "Delmirev",
-                                     "Drachedandion", "Fenkenkabradon", "Kepeshkmolik", "Kerrhylon",
-                                     "Kimbatuul", "Linxakasendalor", "Myastan", "Nemmonis", "Norixius",
-                                     "Ophinshtalajir", "Prexijandilin", "Shestendeliath", "Turnuroth",
-                                     "Verthisathurgiesh", "Yarjerit"]
+names["Zwergen_Männernamen"] = ["Adrik","Alberich","Baern","Barendd","Beloril","Brottor","Dain","Dalgal","Darrak","Delg","Duergath","Dworic","Eberk","Einkil","Elaim","Erias","Fallond","Fargrim","Gardain","Gilthur","Gimgen","Gimurt","Harbek","Kildrak","Kilvar","Morgran","Morkral","Nalral","Nordak","Nuraval","Oloric","Olunt","Orsik","Oskar","Rangrim","Reirak","Rurik","Taklinn","Thoradin","Thorin","Thradal","Tordek","Traubon","Travok","Ulfgar","Uraim","Veit","Vonbin","Vondal","Whurbin"]
+names["Zwergen_Frauennamen"] = ["Anbera","Artin","Audhild","Balifra","Barbena","Bardryn","Bolhild","Dagnal","Dariff","Delre","Diesa","Eldeth","Eridred","Falkrunn","Fallthra","Finelien","Gillydd","Gunnloda","Gurdis","Helgret","Helja","Hlin","Ilde","Jarana","Kathra","Kilia","Kristryd","Liftrasa","Marastyr","Mardred","Morana","Nalaed","Nora","Nurkara","Oriff","Ovina","Riswynn","Sannl","Therlin","Thodris","Torbera","Tordrid","Torgga","Urshar","Valida","Vistra","Vonana","Werydd","Whurdred","Yurgunn"]
+names["Zwergen_Familiennamen"] = ["Aranore","Balderk","Baufund","Blutkind","Bofdann","Brazzik","Brutfaust","Caebrek","Daerdahk","Dankil","Darain","Durthane","Eisenfaust","Fallak","Feuerschmiede","Frostbart","Glanhig","Goblinfluch","Goldfinder","Gorunn","Graubart","Großzeh","Hammerstein","Helcal","Heldenhammer","Holderhek","Ingart","Immerscharf","Kraftamboss","Loderr","Lutgehr","Morigak","Orkfeind","Rakankrak","Rubinauge","Rumnaheim","Schaumhumpen","Silberaxt","Silberstein","Stahlfaust","Starkbräu","Starkherz","Strakeln","Thrahak","Grabentief","Torevir","Torunn","Trollbluter","Treuamboss","Treublut"]
+names["Drachenblütige_Männernamen"] = ["Adrex", "Arjhan", "Azzakh", "Balasar", "Baradad", "Bharash", "Bidreked",
+                                       "Dadalan",
+                                       "Dazzazn", "Direcris", "Donaar", "Fax", "Gargax", "Ghesh", "Gorbundus",
+                                       "Greethen",
+                                       "Heskan", "Hirrathak", "lldrex", "Kaladan", "Kerkad", "Kiirith", "Kriv",
+                                       "Maagog",
+                                       "Medrash", "Mehen", "Mozikth", "Mreksh", "Mugrunden", "Nadarr", "Nithther",
+                                       "Norkruuth",
+                                       "Nykkan", "Pandjed", "Patrin", "Pijjirik", "Quarethon", "Rathkran", "Rhogar",
+                                       "Rivaan",
+                                       "Sethrekar", "Shamash", "Shedinn", "Srorthen", "Tarhun", "Torinn", "Trynnicus",
+                                       "Valorean",
+                                       "Vrondiss", "Zedaar"]
+names["Drachenblütige_Frauennamen"] = [
+    "Akra", "Aasathra", "Antrara", "Arava", "Biri", "Blendaeth", "Burana",
+    "Chassath", "Daar",
+    "Dentratha", "Doudra", "Driindar", "Eggren", "Farideh", "Findex", "Furrele",
+    "Cesrethe",
+    "Cilkass", "Harann", "Havilar", "Hethress", "Hillanot", "Jaxi", "Jezean",
+    "Jheri", "Kadana",
+    "Kava", "Korinn", "Megren", "Mijira", "Mishann", "Nala", "Nuthra", "Perra",
+    "Pogranix",
+    "Pyxrin", "Quespa", "Raiann", "Rezena", "Ruloth", "Saphara", "Savaran", "Sora",
+    "Surina",
+    "Synthrin", "Tatyan", "Thava", "Uadjit", "Vezera", "Zykroff"
+]
+names["Drachenblütige_Klannamen"] = ["Akambherylliax", "Argenthrixus", "Baharoosh", "Beryntolthropal",
+                                     "Bhenkumbyrznaax",
+                                     "Caavylteradyn", "Chumbyxirinnish", "Clethtinthiallor", "Daardendrian", "Delmirev",
+                                     "Dhyrktelonis", "Ebynichtomonis", "Esstyrlynn", "Fharngnarthnost", "Ghaallixirn",
+                                     "Grrrmmballhyst", "Gygazzylyshrift", "Hashphronyxadyn", "Hshhsstoroth",
+                                     "Imbixtellrhyst",
+                                     "Jerynomonis", "Jharthraxyn", "Kerrhylon", "Kimbatuul", "Lhamboldennish",
+                                     "Linxakasendalor", "Mohradyllion", "Mystan", "Nemmonis", "Norixius",
+                                     "Ophinshtalajiir",
+                                     "Orexijandilin", "Pfaphnyrennish", "Phrahdrandon", "Pyraxtallinost", "Qyxpahrgh",
+                                     "Raghthroknaar", "Shestendeliath", "Skaarzborroosh", "Sumnarghthrysh",
+                                     "Tiammanthyllish",
+                                     "Turnuroth", "Umbyrphrael", "Vangdondalor", "Verthisathurgiesh",
+                                     "Wivvyrholdalphiax",
+                                     "Wystongjiir", "Xephyrbahnor", "Yarjerit", "Zzzxaaxthroth"
+                                     ]
 names["Drachenblütiger_Jugendnamen"] = ["Kletterer", "Ohrenkrümmer", "Hüpfer", "Frommer",
                                         "Schildbeißer", "Eifriger"]
 
-names["Gnomen_Männernamen"] = ["Aiston", "Alvyn", "Boddynock", "Brocc",
-                               "Burgell", "Dimble", "Eldon", "Erky", "Fonkin", "Frug", "Gerbo", "Gimble",
-                               "Glim", "Jebeddo", "Kellen. Namfoodle", "Orryn", "Roondar", "Seebo",
-                               "Sindri", "Warryn", "Zook"]
-names["Gnomen_Frauennamen"] = ["Bimpnottin", "Breena", "Caramip", "Carlin",
-                               "Donella", "Duvamil", "Ella", "Ellyjobell", "Ellywick", "Lilli",
-                               "Loopmottin", "Lorilla", "Mardnab", "Nissa", "Nyx", "Oda", "Orla", "Roywyn",
-                               "Shamil", "Tana", "Waywocket", "Zanna"]
-names["Gnomen_Familiennamen"] = ["Beren", "Daergel", "Folkor", "Garrick", "Nackle", "Murnig",
-                                 "Ningel", "Raulnor", "Scheppen", "Timbers", "Türen"]
+names["Gnomen_Männernamen"] = ["Aiston","Alvyn","Anverth","Arumawann","Bilbron","Boddynock","Brocc","Burgell","Cockaby","Crampernap","Dabbledob","Delebean","Dimble","Eberdeb","Eldon","Erky","Fablen","Fibblestib","Fonkin","Frouse","Frug","Cerbo","Gimble","Glim","Igden","Jabble","Jebeddo","Kellen","Kipper","Namfoodle","Oppleby","Orryn","Paggen","Pallabar","Pog","Qualen","Ribbles","Rimple","Roondar","Sapply","Seebo","Senteq","Sindri","Umpen","Warryn","Wiggens","Wobbles","Wrenn","Zaffrab","Zook"]
+names["Gnomen_Frauennamen"] = ["Abalaba","Bimpnottin","Breena","Buvvie","Callybon","Caramip","Carlin","Cumpen","Dalaba","Donella","Duvamil","Ella","Ellyjoybell","Ellywick","Enidda","Lilli","Loopmottin","Lorilla","Luthra","Mardnab","Meena","Menny","Mumpena","Nissa","Numba","Nyx","Oda","Oppah","Orla","Panana","Pyntle","Quilla","Ranala","Reddlepop","Roywyn","Salanop","Shamil","Siffress","Symma","Tana","Tenena","Tervaround","Tippletoe","Ulla","Unvera","Veloptima","Virra","Waywocket","Yebe","Zanna"]
+names["Gnomen_Familiennamen"] = ["Albaratie","Wirrstein","Beren","Boondiggel","Kobbelobb","Daergel","Dunben","Fabbelstabbel","Fappelstamp","Fiedelfenn","Folkor","Garrick","Gimlen","Funkelstein","Gobbelfirn","Gummen","Horcusporcus","Hampelbampel","Eisenfell","Leffery","Lingenhall","Loofollue","Mäkkelferß","Miggeldy","Munggen","Murnig","Musgraben","Nackel","Ningel","Nopenstallen","Nuckelstemp","Offund","Oomtraul","Pilwicken","Pingun","Kielschärfer","Raulnor","Rieß","Rofferton","Scheppen","Schattenmantel","Silbergarn","Sympony","Tarkelby","Timbers","Türen","Umbodoben","Waggeltopp","Weiber","Wildwander"]
 names["Gnomen_Spitznamen"] = ["Bierschwap", "Aschenherz", "Dachs", "Mantel",
                               "Doppelschloss", "Schuftenschläger", "Fnipper", "Ku", "Nim", "Einschuh",
                               "Pock", "Glitterstein", "Entenstolperer"]
 
-names["Ork_Männernamen"] = ["Dench", "Feng", "Gell", "Henk", "Holg", "Imsh",
-                            "Keth", "Krusk", "Mhurren", "Ront", "Shump", "Thokk"]
-names["Ork_Frauennamen"] = ["Baggi", "Emen", "Engong", "Kansif", "Myev",
-                            "Neega", "Ovak", "Ownka", "Shautha", "Sutha", "Vola", "Volen", "Yevelda"]
+names["Ork_Männernamen"] = ["Argran","Braak","Brug","Cagak","Dench","Dorn","Dren","Druuk","Feng","Gell","Gnarsh","Grumbar","Gubrash","Hagren","Henk","Hogar","Holg","Imsh","Karash","Karg","Keth","Korag","Krusk","Lubash","Megged","Mhurren","Mord","Morg","Nil","Nybarg","Odorr","Ohr","Rendar","Resh","Ront","Rrath","Sark","Serag","Sheggen","Shump","Tanglar","Tarak","Thar","Thokk","Trag","Ugarth","Varg","Vilberg","Yurk","Zed"]
+names["Ork_Frauennamen"] = ["Arha","Baggi","Bendoo","Bilga","Brakka","Creega","Drenna","Ekk","Emen","Engong","Fistula","Gaaki","Gorga","Grai","Greeba","Grigi","Gynk","Hrathy","Huru","Uga","Kabbarg","Kansif","Lagazi","Lezre","Murgen","Murook","Myev","Nagrette","Neega","Nella","Nogu","Oolah","Ootah","Ovak","Ownka","Puyet","Reeza","Shautha","Silgre","Sutha","Tagga","Ta war","Tomph","Ubada","Vanchu","Vola","Volen","Vorka","Yevelda","Zagga"]
 
-names["Tiefling_Männernamen"] = ["Akmenos", "Amnon", "Barakas",
-                                 "Damakos", "Ekemon", "Iados", "Kairon", "Leucis", "Melech", "Mordai",
-                                 "Morthos", "Pelaios", "Skamos", "Therai"]
-names["Tiefling_Frauennamen"] = ["Akta", "Anakis", "Bryseis",
-                                 "Criella", "Damaia", "Ea", "Kallista", "Lerissa", "Makaria", "Nemeia",
-                                 "Orianna", "Phelaia", "Rieta"]
-#names["Tiefling_Familiennamen"] = [""]
-names["Tiefling_Tugendnamen"] = ["Aas", "Aufgabe", "Bedauern", "Exzellenz", "Frechheit",
-                                 "Furcht", "Gebet", "Hoffnung", "Hoffnungslos", "Kredo", "Kunst",
-                                 "Müde", "Musik", "Nirgendwo", "Offen", "Poesie", "Qual", "Ruhm", "Verehrung",
-                                 "Vorbild", "Zufall"]
+names["Tiefling_Männernamen"] = ["Abad","Ahrim","Akmen","Amnon","Andram","Astar","Balam","Barakas","Bathin","Caim","Chem","Cimer","Cressei","Damakos","Ekemon","Euron","Fenriz","Forcas","Habor","lados","Kairon","Leucis","Mamnen","Mantus","Marbas","Melech","Merihim","Modean","Mordai","Mormo","Morthos","Nicor","Nirgel","Oriax","Paymon","Pelaios","Purson","Qemuel","Raam","Rimmon","Sammal","Skamos","Tethren","Thamuz","Therai","Valafar","Vassago","Xappan","Zepar","Zephan"]
+names["Tiefling_Frauennamen"] = ["Akta","Anakis","Armara","Astaro","Aym","Azza","Beleth","Bryseis","Bune","Criella","Damaia","Decarabia","Ea","Gadreel","Gomory","Hecat","Ishte","Jezebeth","Kali","Kallista","Kasdeya","Lerissa","Lilith","Makaria","Manea","Markosian","Mastema","Naamah","Nemeia","Nija","Orianna","Osah","Phelaia","Prosperine","Purah","Pyra","Rieta","Ronobe","Ronwe","Seddit","Seere","Sekhmet","Semyaza","Shava","Shax","Sorath","Uzza","Vapula","Vepar","Verin"]
+# names["Tiefling_Familiennamen"] = [""]
+names["Tiefling_Tugendnamen"] = ["Aas","Abscheu","Ausschweifung","Ehrgeiz","Ekstase","Entropie","Exzellenz","Furcht","Gefräßigkeit","Gelächter","Gesang","Glaube","Glorie","Gram","Hass","Hoffnung","Horror","Ideal","Kühnheit","Kummer","Kunst","Langeweile","Laster","Leidenschaft","Liebe","Lust","Mord","Muse","Musik","Mysterium","Niedertracht","Nirgendwo","Offen","Pietät","Poesie","Qual","Queste","Schmerz","Schrecken","Spott","Tod","Tragödie","Tugend","Überdruss","Verhängnis","Verletzung","Verzweiflung","Witz","Zufall","Zweifel"]
+names["Vistani_Männernamen"] = ["Aleksandru","Berislav","Blazh","Bogumir","Boguslav","Borislav","Bozhidar","Bratomil","Bratoslav","Bronislav","Chedomir","Chestibor","Chestirad","Chestislav","Desilav","Dmitrei","Dobromil","Dobroslav","Dragomir","Dragutin","Drazhan","Gostislav","Kazimir","Kyrilu","Lyubomir","Mechislav","Milivoj","Milosh","Mstislav","Nikola","Ninoslav","Premislav","Radomir","Radovan","Ratimir","Rostislav","Slavomir","Stanislav","Svetoslav","Tomislav","Vasili","Velimir","Vladimir","Vladislav","Vlastimir","Volodimeru","Vratislav","Yarognev","Yaromir","Zbignev"]
+names["Vistani_Frauennamen"] = ["Agripina","Anastasiya","Bogdana","Boieslava","Bozhena","Danica","Darya","Desislava","Dragoslava","Dunja","Efrosinia","Ekaterina","Elena","Faina","Galina","Irina","Iskra","Jasna","Katarina","Katya","Kresimira","Lyudmila","Magda","Mariya","Militsa","Miloslava","Mira","Miroslava","Mokosh","Morana","Natasha","Nika","Olga","Rada","Radosiava","Raisa","Slavitsa","Sofiya","Stanislava","Svetlana","Tatyana","Tomislava","Veronika","Vesna","Vladimira","Yaroslava","Yelena","Zaria","Zarya","Zoria"]
+#names["_Familiennamen"] = [""]
 # names["_Männernamen"] = [""]
 # names["_Frauennamen"] = [""]
 # names["_Familiennamen"] = [""]
